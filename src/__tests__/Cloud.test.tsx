@@ -7,6 +7,14 @@ import { render } from 'react-testing-library';
 describe('<Cloud />', () => {
   expect.extend(matchers);
 
+  const testCloud: (styleProp: string, transform: string) => void = (
+    styleProp,
+    transform
+  ) => {
+    const { container } = render(<Cloud transformX={transform} />);
+    expect(container.firstChild).toHaveStyleRule(styleProp, transform);
+  };
+
   test.each`
     cloudDirection
     ${CloudDirection.topLeftBottomRight}
@@ -21,12 +29,10 @@ describe('<Cloud />', () => {
   });
 
   test('transformX prop sets the correct style', () => {
-    const { container } = render(<Cloud transformX='200px' />);
-    expect(container.firstChild).toHaveStyleRule('margin-left', '200px');
+    testCloud('margin-left', '200px');
   });
 
   test('transformY prop sets the correct style', () => {
-    const { container } = render(<Cloud transformY='200px' />);
-    expect(container.firstChild).toHaveStyleRule('margin-top', '200px');
+    testCloud('margin-left', '300px');
   });
 });
