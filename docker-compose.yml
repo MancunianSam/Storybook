@@ -1,0 +1,8 @@
+version: "3"
+services:
+  storybook:
+    build:
+      context: .
+    image: mancuniansam/storybook:latest
+    ports:
+      - 8099:80/tcp

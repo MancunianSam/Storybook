@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 20% 60% 20%;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#1758c1, #6192e0);
+}
+
+.menuItems {
+  height: auto;
+}
+
+.storyWindow {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-gap: 10px;
+  border: 1px solid;
+}
+
+.speech-bubble {
+  position: relative;
+  background: #00aabb;
+  border-radius: 0.4em;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #00aabb;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -10px;
+  margin-left: -20px;
+}
