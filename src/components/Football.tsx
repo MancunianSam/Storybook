@@ -17,7 +17,6 @@ const FootBall: React.FunctionComponent<{}> = props => {
   >(false);
 
   const onDragOverBox: (event: any) => void = event => {
-    console.log('ASSADASDASDASDASDASDASSDASDAS');
     event.stopPropagation();
     event.preventDefault();
     event.currentTarget.style.visibility = 'hidden';
