@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-
 import {
   Sun,
   Cloud,
@@ -10,8 +9,8 @@ import {
   StoryOne
 } from './components';
 import { CloudDirection } from './components/Cloud';
-import { IMenuConfiguration, MenuPosition } from './components/Menu';
-import fish from './images/fish.jpg';
+import { MenuPosition } from './components/Menu';
+import { leftMenuConfig, rightMenuConfig } from './config/config';
 
 const App: React.FunctionComponent = () => {
   const [name, setName]: [string, React.Dispatch<string>] = React.useState<
@@ -20,36 +19,6 @@ const App: React.FunctionComponent = () => {
   const [page, setPage]: [number, React.Dispatch<number>] = React.useState<
     number
   >(1);
-  const leftMenuConfig: IMenuConfiguration[] = [
-    {
-      colour: '#0cff79',
-      title: 'Story 1'
-    },
-    {
-      colour: '#f6ff4f',
-      title: 'Story 2'
-    },
-    {
-      colour: '#ff4f4f',
-      title: 'Story 3'
-    }
-  ];
-
-  const rightMenuConfig: IMenuConfiguration[] = [
-    {
-      colour: '#f6ff4f',
-      title: 'Maths'
-    },
-    {
-      colour: '#ff4f4f',
-      title: 'Games'
-    },
-    {
-      colour: '#0cff79',
-      title: 'Something Else'
-    }
-  ];
-
   const onClick: (input: string) => void = input => {
     setName(input);
     setPage(page + 1);
