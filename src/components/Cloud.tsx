@@ -10,7 +10,6 @@ export enum CloudDirection {
 interface ICloudProps {
   transformX?: string;
   transformY?: string;
-  scale?: number;
   cloudDirection?: CloudDirection;
 }
 
@@ -37,6 +36,7 @@ const Cloud: React.FunctionComponent<ICloudProps> = styled.div`
         ? topLeftBottomRight
         : topRightBottomLeft}
     5s alternate infinite;
+
   border-radius: 100px;
   box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
   height: 40px;

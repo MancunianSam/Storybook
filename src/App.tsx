@@ -64,7 +64,7 @@ const App: React.FunctionComponent = () => {
           transformY='30px'
           cloudDirection={CloudDirection.topLeftBottomRight}
         />
-        <Cloud transformX='600px' transformY='10px' scale={2} />
+        <Cloud transformX='600px' transformY='10px' />
       </CloudContainer>
       <div style={{ height: 'auto' }} />
       <Menu config={leftMenuConfig} />

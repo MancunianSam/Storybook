@@ -8,6 +8,7 @@ interface IDraggableDiv {
   onDragEnd?: (event: React.DragEvent<HTMLDivElement>) => void;
   onDrop?: (event: React.DragEvent<HTMLDivElement>) => void;
   draggable?: boolean;
+  'data-testid'?: string;
 }
 
 const FootBall: React.FunctionComponent<{}> = props => {
@@ -16,6 +17,7 @@ const FootBall: React.FunctionComponent<{}> = props => {
   >(false);
 
   const onDragOverBox: (event: any) => void = event => {
+    console.log('ASSADASDASDASDASDASDASSDASDAS');
     event.stopPropagation();
     event.preventDefault();
     event.currentTarget.style.visibility = 'hidden';
@@ -56,9 +58,14 @@ const FootBall: React.FunctionComponent<{}> = props => {
     <>
       {goal && <h1>Scored</h1>}
       {!goal && (
-        <Ball draggable onDragOver={onDragOverBox} onDragEnd={onDragEnd} />
+        <Ball
+          data-testid='ball'
+          draggable
+          onDragOver={onDragOverBox}
+          onDragEnd={onDragEnd}
+        />
       )}
-      <Goal onDrop={onDrop} onDragOver={onDragOverDrop} />
+      <Goal data-testid='goal' onDrop={onDrop} onDragOver={onDragOverDrop} />
     </>
   );
 };

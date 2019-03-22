@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+services: docker
+
+branches:
+  only:
+    - master
+
+before_install:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+install:
+  - yarn test --coverage
+  - docker-compose build
+  - bash <(curl -s https://codecov.io/bash)
+script:
+  - docker push mancuniansam/storybook
