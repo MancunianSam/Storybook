@@ -21,11 +21,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "compile-emotion": "babel src/ --out-dir src/"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.tsx",
+      "!**/node_modules/**",
+      "src/components/**",
+      "src/config/**",
+      "src/App.tsx"
+    ]
   },
   "browserslist": [
     ">0.2%",
