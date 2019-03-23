@@ -7,10 +7,12 @@ interface IInputProps {
 
 interface IInputBoxProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  alt: string;
 }
 
 interface IButtonProps {
   onClick: (event: React.MouseEvent) => void;
+  'data-testid': string;
 }
 
 const InputWrapper: React.FunctionComponent = styled.div`
@@ -54,8 +56,10 @@ const Input: React.FunctionComponent<IInputProps> = props => {
 
   return (
     <InputWrapper>
-      <InputBox onChange={onChange} />
-      <Button onClick={onClick}>OK</Button>
+      <InputBox alt='input' onChange={onChange} />
+      <Button data-testid='inputButton' onClick={onClick}>
+        OK
+      </Button>
     </InputWrapper>
   );
 };
