@@ -42,7 +42,7 @@ const PrincessImage: React.FunctionComponent<IPrincessImageProps> = styled.img`
 const PrincessImageAnimate: React.FunctionComponent<
   IPrincessImageProps
 > = styled(PrincessImage)`
-  animation: ${slide} 5s ease forwards;
+  animation: ${slide} 3s ease forwards;
 `;
 
 const Princess: React.FunctionComponent<IPrincessImageProps> = props => {

@@ -5,6 +5,7 @@ interface ITextProps {
   colour?: string;
   size?: string;
   alignSelf?: string;
+  marginLeft?: string;
 }
 
 const Text: React.FunctionComponent<ITextProps> = styled.h1`
@@ -14,6 +15,7 @@ const Text: React.FunctionComponent<ITextProps> = styled.h1`
   ${props => (props.alignSelf ? `align-self:${props.alignSelf};` : '')}
   grid-column: 2;
   grid-row: 1 / 3;
+  margin-left: ${props => props.marginLeft};
 `;
 
 export { Text };
