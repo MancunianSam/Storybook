@@ -1,6 +1,6 @@
 import * as React from 'react';
 import App from '../App';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent, waitForElement } from 'react-testing-library';
 
 it('renders without crashing', () => {
   const { container } = render(<App />);
@@ -14,5 +14,5 @@ it('changes pages when the input is clicked', () => {
 
   fireEvent.change(textInput, { target: { value: 'TEST' } });
   fireEvent.click(button);
-  getByText('Hello, TEST');
+  waitForElement(() => getByText('Hello, TEST'));
 });
