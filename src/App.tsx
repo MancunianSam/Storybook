@@ -1,28 +1,15 @@
 import * as React from 'react';
 import './App.css';
-import {
-  Sun,
-  Cloud,
-  CloudContainer,
-  Menu,
-  Input,
-  StoryOne
-} from './components';
+import { Sun, Cloud, CloudContainer, Menu, StoryOne } from './components';
 import { CloudDirection } from './components/Cloud';
 import { MenuPosition } from './components/Menu';
 import { leftMenuConfig, rightMenuConfig } from './config/config';
 
 const App: React.FunctionComponent = () => {
-  const [name, setName]: [string, React.Dispatch<string>] = React.useState<
-    string
-  >('');
-  const [page, setPage]: [number, React.Dispatch<number>] = React.useState<
+  const [story, setStory]: [number, React.Dispatch<number>] = React.useState<
     number
   >(1);
-  const onClick: (input: string) => void = input => {
-    setName(input);
-    setPage(page + 1);
-  };
+
   return (
     <div className='App'>
       <Sun />
@@ -38,8 +25,7 @@ const App: React.FunctionComponent = () => {
       <div style={{ height: 'auto' }} />
       <Menu config={leftMenuConfig} />
       <Menu config={rightMenuConfig} position={MenuPosition.right} />
-      <StoryOne page={page} name={name} />
-      <Input onClick={onClick} />
+      {story === 1 && <StoryOne />}
     </div>
   );
 };
